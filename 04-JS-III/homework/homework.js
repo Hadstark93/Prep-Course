@@ -44,10 +44,9 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // y devuelve el array
   // Tu código:
 
-  var elemeto = "hola"
-  array.push(elemento);
-  return array;
-  
+  array[array.length] = elemento;
+  return array
+
 
 }
 
@@ -57,6 +56,9 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
+
+    array.unshift(elemento);
+    return array;
 }
 
 
@@ -66,6 +68,11 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+
+  return palabras.join(" "); 
+
+
+
 }
 
 
@@ -73,6 +80,15 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+
+  for (var i = 0; i < array.length; i++) {
+    if (array[i]===elemento){
+      return true;
+    }
+    
+  }
+  return false;
+
 }
 
 
@@ -80,6 +96,14 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+
+
+  var suma = 0;
+  for(var i = 0; i < numeros.length; i++) {
+    suma = suma + numeros[i];
+  }
+  return suma;
+
 }
 
 
@@ -87,6 +111,12 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+
+  var notas = 0;
+  for(var i = 0; i < resultadosTest.length; i++) {
+    notas = notas + resultadosTest[i];
+  }
+  return notas /resultadosTest.length;
 }
 
 
@@ -94,6 +124,20 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+
+  numeroMax=0; // Variable que contendrá el numero mas grande de la matríz
+
+  //se recorre la matríz para ir guardando el numero mayor en la variable auxiliar
+  for (let i = 0; i< numeros.length; i++) {
+
+        if (numeros[i]>numeroMax){
+          numeroMax= numeros[i];
+        }
+    } 
+
+    return numeroMax; //una vez terminado el ciclo, se retorna el numero mayor del arreglo
+
+
 }
 
 
@@ -101,7 +145,19 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+
+  if(arguments.length < 1) return 0; //validacion en el caso de que no se entregue un argumento a la funcion
+
+  var total = 1; // variable auxiliar para multiplicar y devolver la multiplicacion de los argumentos 
+  for(var i = 0; i < arguments.length; i++) {
+    total = total * arguments[i];
+  }
+  return total;
+
+
 }
+
+
 
 
 function cuentoElementos(arreglo){
