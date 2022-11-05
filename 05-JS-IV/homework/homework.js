@@ -18,7 +18,7 @@ function crearGato (nombre, edad) {
 
   //gato.saludar();//llamando a la funcion del objeto gato
 
-  return gato;
+  
 
 }
 
